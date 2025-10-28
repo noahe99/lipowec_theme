@@ -12,7 +12,7 @@ $search_enabled = get_theme_mod( 'search_enabled', '1' ); // Get custom meta-val
 <div id="post-0" class="content error404 not-found">
 	<h1 class="entry-title"><?php esc_html_e( 'Not found', 'lipo_bootstrap' ); ?></h1>
 	<div class="entry-content">
-		<p><?php esc_html_e( 'It looks like nothing was found at this location.', 'lipo_bootstrap' ); ?></p>
+		<p><?php esc_html_e( 'Der Inhalt wurde leider nicht gefunden.', 'lipo_bootstrap' ); ?></p>
 		<div>
 			<?php
 				if ( '1' === $search_enabled ) :

@@ -45,7 +45,7 @@ if (empty($images)) {
             <img
             src="<?= esc_url($images[0]['url']); ?>"
             alt="<?= esc_attr($images[0]['alt']); ?>"
-            class="img-fluid h-100 w-100 object-fit-cover border rounded"
+            class="img-fluid h-100 w-100 object-fit-cover"
             id="mainImage">
 
           <?php endif; ?>

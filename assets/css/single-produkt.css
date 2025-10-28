@@ -87,7 +87,7 @@
 
 .thumb {
   cursor: pointer;
-	border-radius: 3px;
+	border-radius: 1.5px;
   transition: 0.3s ease;
   opacity: 0.75;
   object-fit: cover;
