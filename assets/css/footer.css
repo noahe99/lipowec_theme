@@ -1,0 +1,104 @@
+footer {
+	margin-top: 50px;
+}
+
+.col-md-6 .nav-footer {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	gap: 10px;
+	margin-bottom: 10px;
+}
+
+.col-md-6 .nav-footer li {
+	display: inline-block;
+}
+
+.social-media {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	gap: 10px;
+}
+
+.social-media a {
+	color: black;
+}
+
+.social-media li{
+	display: inline-block;
+}
+
+.social-media li i{
+	margin-right: 10px;
+}
+
+.social-media .social-links i {
+		font-size: 1.3rem; 
+}
+
+
+.footer-contact .type {
+	opacity: 90%;
+}
+
+#footer {
+  padding: 15px;
+  background-color: #F0F4F8;
+}
+
+#footer {
+	color: #1A1A1A;
+}
+.copyright {
+  font-size: 14px;
+  margin-bottom: -10px;
+}
+
+.host-info {
+  font-size: 10px;
+}
+
+.footer-logo {
+  max-width: 30%;
+  margin-bottom: -15px;
+}
+
+.download-section {
+	margin-top: 50px;
+}
+
+.footer h4 {
+	color: black;
+	margin-top: 1rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+.footer h4::after {
+	content: "";
+	display: block;
+	height: 2px;
+	width: 65%;
+	background: black;
+	margin-top: 5px;
+}
+
+.footer-contact-wrapper {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  min-height: 300px; 
+}
+
+.footer-contact-section {
+  max-width: 40%;
+	text-align: center;
+}
+
+.footer-contact-section button {
+	margin: auto;
+}
+

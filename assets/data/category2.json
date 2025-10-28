@@ -1,0 +1,92 @@
+[
+  [ 
+    {
+      "category_name": "Rollladen",
+      "category_paragraph": "Verwandeln Sie Ihre Terrasse in einen geschützten Lieblingsplatz – mit modernen Pergolen, stilvollen Alu-Lamellendächern und weiteren flexiblen Überdachungslösungen. Für Schatten, Komfort und ganzjähriges Outdoor-Vergnügen.",
+      "products": 
+      [     
+      {
+        "title": "Solar-Rollladen",
+        "link": "/produkt/solar-rollladen/",
+        "image": "/wp-content/uploads/2025/03/solarrollladen05.jpg",
+        "info": "<strong>Einfach genial:</strong> Die Aluminium-Lamellen sind um bis zu 160 Grad schwenkbar.<br>Das schafft Flexibilität.",
+        "category": "Pergola"
+      },
+      {
+        "title": "Rollladen | Alu",
+        "link": "/produkt/rollladen-alu/",
+        "image": "/wp-content/uploads/2025/03/rollladen_alu02.jpg",
+        "info": "<strong>Einfach schön:</strong> Diese Terrassenüberdachung spiegelt die Leichtigkeit des Seins wider.<br>Das schafft Ambiente.",
+        "category": "Pergola"
+      },
+      {
+        "title": "Rollladen | Holz",
+        "link": "/produkt/holzrollladen/",
+        "image": "/wp-content/uploads/2025/03/holzrollladen01.png",
+        "info": "<strong>Einfach perfekt:</strong> Die Terrassenüberdachung mit perfektem Design und maximaler Funktionalität.<br>Das schafft ruhige Rückzugsgebiete.",
+        "category": "Pergola"
+      }
+      ]
+    }
+  ],
+  [ 
+    {
+      "category_name": "Fassade",
+      "category_paragraph": "Eleganter Sonnenschutz mit Stil: Unsere Markisen bieten zuverlässigen Schatten und setzen zugleich optische Akzente. Ideal für Terrasse, Balkon oder Fenster – in vielen Farben und Ausführungen erhältlich.",
+      "products": 
+      [     
+      {
+        "title": "Senkrechtmarkise",
+        "link": "/produkt/senkrechtmarkise/",
+        "image": "/wp-content/uploads/2025/03/senkrechtmarkise02.jpg",
+        "info": "<strong>Einfach vielfältig:</strong> Die Markise für Terrasse und Balkon spendet Schatten und schützt zugleich vor UV-Strahlung.<br>Das schafft Sicherheit.",
+        "category": "Pergola"
+      },
+      {
+        "title": "Zip-Screen",
+        "link": "/produkt/zipscreen/",
+        "image": "/wp-content/uploads/2025/03/zip_screen03.jpg",
+        "info": "<strong>Einfach wasserdicht:</strong> Die Markise, die zu 100 % wasserdicht ist und somit auch für Regenschutz sorgt.<br>Das schafft Spaß im Trockenen.",
+        "category": "Pergola"
+      },
+      {
+        "title": "Großlamellen System",
+        "link": "/produkt/groslamellen-system/",
+        "image": "/wp-content/uploads/2025/03/grosslamellen-system03.jpg",
+        "info": "<strong>Einfach traumhaft:</strong> Mit Pergola-Markisen entspannen, unbeschwert und komfortabel die Freizeit genießen.<br>Das schafft Lebensraum.",
+        "category": "Pergola"
+      }
+      ]
+    }
+  ],
+  [ 
+    {
+      "category_name": "Innenbereich",
+      "category_paragraph": "Flexibel, formschön, funktional: Mit unseren hochwertigen Sonnenschirmen genießen Sie Schatten genau dort, wo Sie ihn brauchen. Perfekt für Garten, Terrasse oder Poolbereich.",
+      "products": 
+      [     
+      {
+        "title": "Jalousien",
+        "link": "/produkt/jalousien/",
+        "image": "/wp-content/uploads/2025/03/jalousien02.jpg",
+        "info": "<strong>Einfach platzsparend:</strong> Der Schirm mit größtmöglicher Bewegungsfreiheit und großzügigen Wohlfühlzonen.<br>Das schafft Raum.",
+        "category": "Pergola"
+      },
+      {
+        "title": "Plissee",
+        "link": "/produkt/plissee/",
+        "image": "/wp-content/uploads/2025/03/plissee07.jpg",
+        "info": "Einfach genial: Die Aluminium-Lamellen sind um bis zu 160 Grad schwenkbar.<br>Das schafft Flexibilität.",
+        "category": "Pergola"
+      },
+      {
+        "title": "Raffrollo",
+        "link": "/produkt/raffrollo",
+        "image": "/wp-content/uploads/2025/03/raffrollo02.jpg",
+        "info": "Einfach genial: Die Aluminium-Lamellen sind um bis zu 160 Grad schwenkbar.<br>Das schafft Flexibilität.",
+        "category": "Pergola"
+      }
+      ]
+    }
+  ]
+]

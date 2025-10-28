@@ -1,0 +1,31 @@
+.about img
+{
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.about h1 {
+  font-family: Inter, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.about h3 {
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+  .hover-img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+  }
+
+  .hover-img:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }

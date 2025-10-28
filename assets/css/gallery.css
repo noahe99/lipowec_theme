@@ -1,0 +1,15 @@
+.cat-choice h4
+{
+  font-size: 1.8rem;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+

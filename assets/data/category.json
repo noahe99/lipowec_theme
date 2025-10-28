@@ -1,0 +1,99 @@
+[
+  [ 
+    {
+      "category_name": "Terrassenüberdachungen",
+      "category_paragraph": "Verwandeln Sie Ihre Terrasse in einen geschützten Lieblingsplatz – mit modernen Pergolen, stilvollen Alu-Lamellendächern und weiteren flexiblen Überdachungslösungen. Für Schatten, Komfort und ganzjähriges Outdoor-Vergnügen.",
+      "products": 
+      [     
+      {
+        "title": "Alu-Lamellendach",
+        "link": "/produkt/alu-lamellendach/",
+        "image": "/wp-content/uploads/2025/03/alu_lamellendach_01.jpg",
+        "info": "<strong>Einfach genial:</strong> Die Aluminium-Lamellen sind um bis zu 160 Grad schwenkbar.<br>Das schafft Flexibilität.",
+        "category": "Pergola"
+      },
+      {
+        "title": "Pergola Systeme",
+        "link": "/produkt/pergola-systeme/",
+        "image": "/wp-content/uploads/2025/03/pergola_systeme_04.jpg",
+        "info": "<strong>Einfach schön:</strong> Diese Terrassenüberdachung spiegelt die Leichtigkeit des Seins wider.<br>Das schafft Ambiente.",
+        "category": "Pergola"
+      },
+      {
+        "title": "Flexi-Cube",
+        "link": "/produkt/flexi-cube/",
+        "image": "/wp-content/uploads/2025/03/flex_cube_07.jpg",
+        "info": "<strong>Einfach perfekt:</strong> Die Terrassenüberdachung mit perfektem Design und maximaler Funktionalität.<br>Das schafft ruhige Rückzugsgebiete.",
+        "category": "Pergola"
+      }
+      ]
+    }
+  ],
+  [ 
+    {
+      "category_name": "Markisen",
+      "category_paragraph": "Eleganter Sonnenschutz mit Stil: Unsere Markisen bieten zuverlässigen Schatten und setzen zugleich optische Akzente. Ideal für Terrasse, Balkon oder Fenster – in vielen Farben und Ausführungen erhältlich.",
+      "products": 
+      [     
+      {
+        "title": "Markise | Klassisch",
+        "link": "/produkt/markise/",
+        "image": "/wp-content/uploads/2025/03/Markise-Terasse-Balkon-content-02-scaled.jpg",
+        "info": "<strong>Einfach vielfältig:</strong> Die Markise für Terrasse und Balkon spendet Schatten und schützt zugleich vor UV.<br>Das schafft Sicherheit.",
+        "category": "Markise"
+      },
+      {
+        "title": "Markise | Wasserdicht",
+        "link": "/produkt/wasserdichte-markise/",
+        "image": "/wp-content/uploads/2025/03/markise_wasserdicht_01.jpg",
+        "info": "<strong>Einfach wasserdicht:</strong> Die Markise, die zu 100 % wasserdicht ist und somit auch für Regenschutz sorgt.<br>Das schafft Spaß im Trockenen.",
+        "category": "Markise"
+      },
+      {
+        "title": "Pergola Markise",
+        "link": "/produkt/pergola-markisen/",
+        "image": "/wp-content/uploads/2025/03/pergola_markise_01.jpg",
+        "info": "<strong>Einfach traumhaft:</strong> Mit Pergola-Markisen entspannen, unbeschwert und komfortabel die Freizeit genießen.<br>Das schafft Lebensraum.",
+        "category": "Markise"
+      },
+      {
+        "title": "Wintergartenmarkise",
+        "link": "/produkt/wintergartenmarkise/",
+        "image": "/wp-content/uploads/2025/03/wintergartenmarkise01.jpg",
+        "info": "<strong>Einfach traumhaft:</strong> Mit Pergola-Markisen entspannen, unbeschwert und komfortabel die Freizeit genießen.<br>Das schafft Lebensraum.",
+        "category": "Markise"
+      }
+      ]
+    }
+  ],
+  [ 
+    {
+      "category_name": "Sonnenschirme",
+      "category_paragraph": "Flexibel, formschön, funktional: Mit unseren hochwertigen Sonnenschirmen genießen Sie Schatten genau dort, wo Sie ihn brauchen. Perfekt für Garten, Terrasse oder Poolbereich.",
+      "products": 
+      [     
+      {
+        "title": "Ampelschirm",
+        "link": "/produkt/ampel-freiarmschirm/",
+        "image": "/wp-content/uploads/2025/03/ampelschirm03.jpg",
+        "info": "<strong>Einfach platzsparend:</strong> Der Schirm mit größtmöglicher Bewegungsfreiheit und großzügigen Wohlfühlzonen.<br>Das schafft Raum.",
+        "category": "Sonnenschirm"
+      },
+      {
+        "title": "Sonnenschirm | Klassisch",
+        "link": "/produkt/sonnenschirm",
+        "image": "/wp-content/uploads/2025/03/sonnenschirm_klassisch01-scaled.jpg",
+        "info": "Einfach genial: Die Aluminium-Lamellen sind um bis zu 160 Grad schwenkbar.<br>Das schafft Flexibilität.",
+        "category": "Sonnenschirm"
+      },
+      {
+        "title": "Sonnensegel",
+        "link": "/produkt/sonnensegel/",
+        "image": "/wp-content/uploads/2025/03/sonnensegel01.jpg",
+        "info": "Einfach genial: Die Aluminium-Lamellen sind um bis zu 160 Grad schwenkbar.<br>Das schafft Flexibilität.",
+        "category": "Sonnenschirm"
+      }
+      ]
+    }
+  ]
+]
