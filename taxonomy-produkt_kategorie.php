@@ -8,9 +8,8 @@
 
           echo "<nav class='breadcrumbs mt-4'>";
           echo '<a href="' . esc_url(home_url('/')) . '">Startseite</a>';
-          echo ' &gt; <a href="' . esc_url(home_url('/produkte')) . '">Produkte</a>';
+          //echo ' &gt; <a href="' . esc_url(home_url('/produkt')) . '">Produkte</a>';
 
-          // Gib die Eltern der aktuellen Kategorie aus (in richtiger Reihenfolge)
           $ancestors = array_reverse($ancestors);
           foreach ($ancestors as $ancestor_id) {
               $ancestor = get_term($ancestor_id, 'produkt_kategorie');

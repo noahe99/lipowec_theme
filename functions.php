@@ -860,6 +860,42 @@ function my_tsf_generated_description( $desc, $args ) {
 
 wp_enqueue_script('custom-menu', get_theme_file_uri( 'assets/js/custom-menu.js' ), null, null, true);
 
+
+add_action('pre_get_posts', 'sort_produkte_by_acf_int');
+function sort_produkte_by_acf_int($query) {
+
+    if (!is_admin()
+        && $query->is_main_query()
+        && (is_post_type_archive('produkt') || is_tax('produkt_kategorie'))
+    ) {
+
+        $query->set('meta_key', 'sort');
+
+        $query->set('orderby', [
+            'meta_value_num' => 'ASC',
+            'date' => 'DESC',
+        ]);
+
+        $query->set('meta_type', 'NUMERIC');
+
+        $query->set('meta_query', [
+            'relation' => 'OR',
+            [
+                'key'     => 'sort',
+                'compare' => 'EXISTS'
+            ],
+            [
+                'key'     => 'sort',
+                'compare' => 'NOT EXISTS'
+            ]
+        ]);
+    }
+}
+
+
+
+
+
 /**
  * Register Custom Navigation Walker
  */

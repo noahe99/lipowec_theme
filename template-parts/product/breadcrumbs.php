@@ -18,14 +18,7 @@ if (is_single() && !empty($terms) && !is_wp_error($terms)) {
     // Loop durch Terms
     foreach ($terms as $term) {
         $active_class = ($term->term_id == $last->term_id) ? 'active' : '';
-
-        if ($term->name === "Produkte") {
-            echo "<p>Is da!</p>";
-            echo "&gt; <a href='#' class='breadcrumb-link $active_class'>" . esc_html($term->name) . "</a> ";
-        }
-        else {
-            echo "&gt; <a href='" . esc_url(get_term_link($term)) . "' class='breadcrumb-link $active_class'>" . esc_html($term->name) . "</a> ";
-        }
+        echo "&gt; <a href='" . esc_url(get_term_link($term)) . "' class='breadcrumb-link $active_class'>" . esc_html($term->name) . "</a> ";
     }
 
     echo "</nav>";
