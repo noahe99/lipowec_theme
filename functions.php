@@ -765,33 +765,25 @@ add_shortcode('category_overview', 'category_overview_shortcode');
 
 
 
-// auto response after form submission via cf7
-add_action('wpcf7_mail_sent', 'custom_email_response');
+add_action('wpcf7_before_send_mail', 'custom_email_response');
 function custom_email_response($contact_form) {
     $submission = WPCF7_Submission::get_instance();
     if (!$submission) return;
 
     $data = $submission->get_posted_data();
     $recipient = $data['your-email'] ?? '';
-    $honeypot = $data['hidden-field'] ?? '';
+    //$honeypot = $data['hidden-field'] ?? '';
 
-		// some spam filter lol
-    $blacklist = ['mailinator.com', '10minutemail.com', 'mail.ru', 'yandex.ru', 'mail.ru'];
-    $domain = substr(strrchr($recipient, "@"), 1);
+ 
+    $template_path = get_template_directory() . '/mail/mail_template.html';
+    if (!file_exists($template_path)) return;
 
-    if (
-        !is_email($recipient) ||
-        !empty($honeypot) ||
-        in_array($domain, $blacklist)
-    ) {
-        return; // Invalid or spam
-    }
+    $template = file_get_contents($template_path);
+    $headers = ['Content-Type: text/html; charset=UTF-8'];
 
-		$template = file_get_contents(get_template_directory() . '/mail/mail_template.html');
-		$headers = ['Content-Type: text/html; charset=UTF-8'];
-
-		wp_mail($recipient, '[LIPOWEC] Vielen Dank für Ihre Anfrage!', $template, $headers);
+    wp_mail($recipient, '[LIPOWEC] Vielen Dank für Ihre Anfrage!', $template, $headers);
 }
+
 
 define('BASE_URL', 'https://lipowec.www12.perfectnet.at');
 

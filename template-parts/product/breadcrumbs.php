@@ -1,24 +1,31 @@
 <?php
 /**
- * Tempalte Part: Breadcrumbs
+ * Template Part: Breadcrumbs Custom Taxonomy
  */
 
-$categories = get_the_category(); 
-if (is_single() && !empty($categories)) {
+$taxonomy = 'produkt_kategorie'; // <--- Deine Taxonomie hier anpassen
+$terms = get_the_terms(get_the_ID(), $taxonomy);
+
+if (is_single() && !empty($terms) && !is_wp_error($terms)) {
     echo "<nav class='breadcrumbs mb-0'>";
 
-    // Home link
-    echo '<a href="' . get_home_url() . '">Startseite</a> ';
+    // Home
+    echo '<a href="' . esc_url(home_url('/')) . '">Startseite</a> ';
 
-    // Last category to mark as 'active'
-    $last = end($categories);
+    // Letzter Term soll active sein
+    $last = end($terms);
 
-    // Loop through categories
-    foreach ($categories as $category) {
-        $active_class = ($category->term_id == $last->term_id) ? 'active' : '';
+    // Loop durch Terms
+    foreach ($terms as $term) {
+        $active_class = ($term->term_id == $last->term_id) ? 'active' : '';
 
-        // Display each category link with a separator
-        echo "&gt; <a href='" . get_category_link($category->term_id) . "' class='breadcrumb-link " . $active_class . "'>" . $category->name . "</a> ";
+        if ($term->name === "Produkte") {
+            echo "<p>Is da!</p>";
+            echo "&gt; <a href='#' class='breadcrumb-link $active_class'>" . esc_html($term->name) . "</a> ";
+        }
+        else {
+            echo "&gt; <a href='" . esc_url(get_term_link($term)) . "' class='breadcrumb-link $active_class'>" . esc_html($term->name) . "</a> ";
+        }
     }
 
     echo "</nav>";

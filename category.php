@@ -20,7 +20,6 @@ if ( have_posts() ) :
 	get_template_part( 'archive', 'loop' );
 else :
 	// 404.
-	echo do_shortcode('[category_overview category="sonnenschirme"]');
 	get_template_part( 'content', 'none' );
 endif;
 
