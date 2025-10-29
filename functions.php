@@ -909,10 +909,6 @@ function sort_produkte_by_acf_int($query) {
     }
 }
 
-
-
-
-
 /**
  * Register Custom Navigation Walker
  */
