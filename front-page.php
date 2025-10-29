@@ -46,6 +46,7 @@ get_header();
             <div class="d-flex flex-column flex-md-row gap-3">
               <a href="/kontaktieren-sie-uns/" class="btn btn-primary px-4">Jetzt unverbindlich beraten lassen</a>
               <a href="<?php echo $cta_url; ?>" class="btn btn-outline-light px-4">Unsere Produkte entdecken</a>
+
             </div>
           </div>
         </div>
@@ -81,10 +82,11 @@ get_header();
   </section>
   -->
 
-
+ 
 
 
   <div class="container-lg">
+
     <?php $categories = get_field('categories'); ?>
     <div class="row mt-5 mb-0" id="categories">
       <div class="col-md-6">
