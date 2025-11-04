@@ -36,8 +36,8 @@ if (empty($images)) {
       <div class="col-12 col-md-9 h-100 position-relative">
         <div class="main-image-wrapper h-100">
           <?php if (!empty($video_url)): ?>
-              <video class="hero-bg-video" autoplay muted loop playsinline poster="<?= $images[0]['url']  ?>">
-                <source src="<?= $video_url ?>" type="video/mp4">
+              <video class="hero-bg-video" autoplay muted loop playsinline poster="<?= $images[0]['url'] ?>"  preload="none">
+                <source src="<?= esc_url($video_url) ?>" type="video/mp4">
                 Dein Browser unterstützt kein HTML5-Video.
               </video>
           <?php else: ?>

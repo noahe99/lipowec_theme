@@ -29,6 +29,8 @@
 									array(
 										'container'       => 'nav',
 										'container_class' => 'col-md-6',
+										'container_id'    => 'footer-navigation',
+										'container_aria_label' => 'Footer Navigation',
 										//'fallback_cb'     => 'WP_Bootstrap4_Navwalker_Footer::fallback',
 										'walker'          => new WP_Bootstrap4_Navwalker_Footer(),
 										'theme_location'  => 'footer-menu',
@@ -39,16 +41,26 @@
 							?>
 
 							<ul class="social-media">
-								<a rel="noopener noreferrer" href="https://www.instagram.com/lipowec_sonnenschutz/" class="social-links">
-									<li><i class="fa-brands fa-instagram"></i></li>
-								</a>
-								<a rel="noopener noreferrer" href="https://www.facebook.com/lipowecsonnenschutz/?locale=de_DE" class="social-links">
-									<li><i class="fa-brands fa-facebook"></i></li>
-								</a>
-								<a rel="noopener noreferrer" href="https://at.linkedin.com/company/lipowec-gmbh" class="social-links">
-									<li><i class="fa-brands fa-linkedin"></i></li>
-								</a>
+									<li>
+											<a rel="noopener noreferrer" href="https://www.instagram.com/lipowec_sonnenschutz/" class="social-links" aria-label="Lipowec auf Instagram">
+													<i class="fa-brands fa-instagram" aria-hidden="true"></i>
+													<span class="sr-only">Instagram</span>
+											</a>
+									</li>
+									<li>
+											<a rel="noopener noreferrer" href="https://www.facebook.com/lipowecsonnenschutz/?locale=de_DE" class="social-links" aria-label="Lipowec auf Facebook">
+													<i class="fa-brands fa-facebook" aria-hidden="true"></i>
+													<span class="sr-only">Facebook</span>
+											</a>
+									</li>
+									<li>
+											<a rel="noopener noreferrer" href="https://at.linkedin.com/company/lipowec-gmbh" class="social-links" aria-label="Lipowec auf LinkedIn">
+													<i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+													<span class="sr-only">LinkedIn</span>
+											</a>
+									</li>
 							</ul>
+
 
 
 						</div>

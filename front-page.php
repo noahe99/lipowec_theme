@@ -81,10 +81,6 @@ get_header();
     </div>
   </section>
   -->
-
- 
-
-
   <div class="container-lg">
 
     <?php $categories = get_field('categories'); ?>
@@ -128,14 +124,18 @@ get_header();
         <p class="mb-4"><?= $section1['paragraph']; ?></p>
         <a href="/kontaktieren-sie-uns/" class="cnt-btn-front">Kostenlose Kontaktanfrage senden</a>
       </div> <!-- /col-12 -->
-
-      <?php $images = json_decode($section1['image_json'], true); ?>
+      <?php $image_ids = $section1['images']; ?>
       <div class="col-md-6 position-relative about_img_wrapper d-none d-md-block">
-        <img src="<?= $images[0]; ?>" class="img-fluid about_img main" alt="Lipowec Allwetter Schirme Gastro">
-        <img src="<?= $images[1]; ?>" class="img-fluid about_img top-right" alt="Lipowec Pergola System Renderbild Gastro">
-        <img src="<?= $images[2]; ?>" class="img-fluid about_img bottom-left" alt="Lipowec Markise wasserdicht Gastro">
+          
+        <?php render_image($image_ids[0], 'about_img main', 'large'); ?>
+        <?php render_image($image_ids[1], 'about_img top-right', 'large'); ?>
+        <?php render_image($image_ids[2], 'about_img bottom-left', 'large'); ?>
+          
       </div>
     </div>
+
+
+
 
 
 
@@ -166,7 +166,7 @@ get_header();
             <div class="mb-3">
               <i class="bi bi-geo-alt display-5 text-primary"></i>
             </div>
-            <h5 class="fw-bold mb-2"><?= $point['heading'] ?></h5>
+            <h4 class="fw-bold mb-2 point-heading"><?= $point['heading'] ?></h4>
             <p class="text-muted mb-0">
               <?= $point['content'] ?>
             </p>
@@ -179,7 +179,8 @@ get_header();
     <?php $showroom = get_field('showroom'); ?>
     <section class="container-fluid py-5" data-aos="fade-up">
       <div class="row align-items-center">
-        <div class="col-md-6 d-none d-md-block showroom" style="background-image: url('<?= $showroom['image']; ?>'); background-size: cover; background-position: center; min-height: 400px;">
+        <div class="col-md-6 d-none d-md-block">
+        <?php render_image($showroom['image'], 'showroom', 'large'); ?>  
         </div>
 
         <div class="col-md-6 p-4">

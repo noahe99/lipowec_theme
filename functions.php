@@ -909,6 +909,18 @@ function sort_produkte_by_acf_int($query) {
     }
 }
 
+
+function render_image($id, $class, $size) {
+	echo wp_get_attachment_image( 
+			$id, 
+			$size,
+			false,
+			['class' => 'img-fluid ' . $class] );
+}
+
+
+
+
 /**
  * Register Custom Navigation Walker
  */
