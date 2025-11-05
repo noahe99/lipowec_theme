@@ -125,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function showImage(index) {
+    console.log("display image for index", index);
     mainWrapper.innerHTML = `
       <img
         src="${images[index]}"
