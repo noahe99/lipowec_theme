@@ -765,42 +765,6 @@ add_shortcode('category_overview', 'category_overview_shortcode');
 
 
 
-add_action('wpcf7_mail_sent', 'custom_email_response');
-function custom_email_response($contact_form) {
-
-    $submission = WPCF7_Submission::get_instance();
-    if (!$submission) return;
-
-    $data = $submission->get_posted_data();
-    
-    if (empty($data['your-email']) || !is_email($data['your-email'])) {
-        return;
-    }
-
-    $recipient = sanitize_email($data['your-email']);
-
-    // HTML Template laden
-    $template_path = get_template_directory() . '/mail/mail_template.html';
-    if (!file_exists($template_path)) return;
-
-    $body = file_get_contents($template_path);
-
-    // HTML Header setzen
-    $headers = [
-        'Content-Type: text/html; charset=UTF-8',
-        'From: LIPOWEC <info@lipowec.at>'
-    ];
-
-    // Auto-Response senden
-    wp_mail(
-        $recipient,
-        'Vielen Dank für Ihre Anfrage!',
-        $body,
-        $headers
-    );
-}
-
-
 
 define('BASE_URL', 'https://lipowec.www12.perfectnet.at');
 

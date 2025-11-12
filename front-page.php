@@ -86,7 +86,7 @@ get_header();
     <?php $categories = get_field('categories'); ?>
     <div class="row mt-5 mb-0" id="categories">
       <div class="col-md-6">
-        <h2 class="fw-bold home-lead"><?= $categories['h2']; ?></h2>
+        <h1 class="fw-bold home-lead"><?= $categories['h2']; ?></h1>
       </div>
       <div class="col-md-6">
         <p><?= $categories['paragraph']; ?></p>
@@ -99,7 +99,6 @@ get_header();
           <?php
           
           $category_json = json_decode($categories['category_json'], true);
-
           foreach ($category_json as $cat) {
             echo '<div class="col-12 col-md-6 col-lg-3">';
             echo '<a href="' . $cat['link'] . '">';
@@ -116,6 +115,22 @@ get_header();
         </div>
       </div>
     </div>
+
+    <?php $categories = get_field('product_categories'); ?>
+
+    <?php foreach($categories as $cat): ?>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <a href="<?= esc_url( $cat['link'] ) ?>">
+          <?php $image = wp_get_attachment_image_src( $cat['image'], 'medium' ); ?>
+          <div class="category has-bg-img" style="background-image: url( <?= esc_url( $image ); ?> )">
+            <div class="overlay-cat"></div>
+            <span class="card-title"><?= $cat['name'] ?><i class="fa-solid fa-chevron-right"></i></span>
+          </div>
+        </a>
+      </div>
+
+    <?php endforeach; ?>
 
     <?php $section1 = get_field('content_section_1'); ?>
     <div class="row align-items-center about pt-5" data-aos="fade-up">

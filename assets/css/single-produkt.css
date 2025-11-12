@@ -87,6 +87,7 @@
 
 .thumb {
   cursor: pointer;
+  max-height: 200px;
 	border-radius: 1.5px;
   transition: 0.3s ease;
   opacity: 0.75;
