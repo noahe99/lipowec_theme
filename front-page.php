@@ -67,70 +67,45 @@ get_header();
 
 </section>
 
-  
-  <!--
-  <section class="position-relative text-white d-flex align-items-center"
-    style="height: 75vh; background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.05)), url('<?= $hero_content['background_image'] ?>') center center / cover no-repeat;">
-    <div id="hero-container" class="container z-1">
-      <h1 class="display-5 fw-bold mb-3"><?= $hero_content['headline']; ?></h1>
-      <p class="muted mb-5"><?= $hero_content['subheadline']; ?></p>
-      <div class="d-flex flex-column flex-md-row gap-3">
-        <a href="/kontaktieren-sie-uns/" class="btn btn-primary px-4">Jetzt unverbindlich beraten lassen</a>
-        <a href="#categories" class="btn btn-outline-light px-4">Unsere Produkte entdecken</a>
-      </div>
-    </div>
-  </section>
-  -->
   <div class="container-lg">
 
-    <?php $categories = get_field('categories'); ?>
     <div class="row mt-5 mb-0" id="categories">
       <div class="col-md-6">
-        <h1 class="fw-bold home-lead"><?= $categories['h2']; ?></h1>
+        <h1 class="fw-bold home-lead">Entdecken Sie unsere Lösungen für Terrasse, Garten & mehr</h1>
       </div>
       <div class="col-md-6">
-        <p><?= $categories['paragraph']; ?></p>
+        <p>LIPOWEC bietet hochwertigen Sonnen- und Wetterschutz für Ihren Außenbereich – ob Zuhause, 
+          im Gastgarten oder auf der Hotelterrasse. Unsere Lösungen wie Terrassenüberdachungen, Großschirm-Systeme, 
+          Windschutz, Heizstrahler, Möbel und Pavillons vereinen Qualität, Design und Funktionalität</p>
       </div>
     </div>
-
+        
     <div class="container-lg position-relative">
       <div class="scroll-wrapper">
         <div class="row flex-nowrap g-0">
-          <?php
+
+          <?php $categories_new = get_field('product_categories'); 
           
-          $category_json = json_decode($categories['category_json'], true);
-          foreach ($category_json as $cat) {
-            echo '<div class="col-12 col-md-6 col-lg-3">';
-            echo '<a href="' . $cat['link'] . '">';
-            echo '<div class="category has-bg-img" style="background-image: url(\'' . $cat['image'] . '\')">';
-
-            echo '<div class="overlay-cat"></div>';
-            echo '<span class="card-title">' . $cat['name'] . '<i class="fa-solid fa-chevron-right"></i></span>';
-
-            echo '</div>';
-            echo '</a>';
-            echo '</div>';
-          }
           ?>
+          <?php foreach($categories_new as $cat): ?>
+            <div class="col-12 col-md-6 col-lg-3">
+              <a href="<?= esc_url( $cat['link'] ) ?>">
+                <?php $image = wp_get_attachment_image_src( $cat['image'], 'large' );
+                  if ($image && isset($image[0])) {
+                    $image_url = esc_url($image[0]);
+                  } ?>
+                <div class="category has-bg-img" style="background-image: url( <?= $image_url ?> )">
+                  <div class="overlay-cat"></div>
+                  <span class="card-title"><?= $cat['name'] ?><i class="fa-solid fa-chevron-right"></i></span>
+                </div>
+              </a>
+            </div>
+
+          <?php endforeach; ?>
+
         </div>
-      </div>
+      </div><
     </div>
-
-    <?php $categories = get_field('product_categories'); ?>
-
-    <?php foreach($categories as $cat): ?>
-
-      <div class="col-12 col-md-6 col-lg-3">
-        <a href="<?= esc_url( $cat['link'] ) ?>">
-          <?php $image = wp_get_attachment_image_src( $cat['image'], 'medium' ); ?>
-          <div class="category has-bg-img" style="background-image: url( <?= esc_url( $image ); ?> )">
-            <div class="overlay-cat"></div>
-            <span class="card-title"><?= $cat['name'] ?><i class="fa-solid fa-chevron-right"></i></span>
-          </div>
-        </a>
-      </div>
-
-    <?php endforeach; ?>
 
     <?php $section1 = get_field('content_section_1'); ?>
     <div class="row align-items-center about pt-5" data-aos="fade-up">
