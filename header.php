@@ -7,14 +7,6 @@
 	<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 	<?php wp_head(); ?>
 	<!--<script src="https://analytics.ahrefs.com/analytics.js" data-key="/7RnSsNtzt73WRSIQDSs9Q" async></script>-->
-	<!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/ae2caad89f046c6befa97303/script.js"></script> <!-- End cookieyes banner -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G54HDYQGLW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-G54HDYQGLW');
-  </script>
 
 
 </head>
