@@ -3,11 +3,8 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-	<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/aos/aos.css">
 	<?php wp_head(); ?>
-	<!--<script src="https://analytics.ahrefs.com/analytics.js" data-key="/7RnSsNtzt73WRSIQDSs9Q" async></script>-->
-
 
 </head>
 

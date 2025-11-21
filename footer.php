@@ -100,9 +100,7 @@
 			?>
 			</body>
 
-			<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-			<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+			<script src="/assets/aos/aos.js"></script>
 
 			<script>
 				AOS.init();
