@@ -16,7 +16,7 @@
 
     <!-- Trigger Button -->
     <button id="openContactModal" data-bs-toggle="modal" data-bs-target="#cnt-modal" class="cnt-btn align-self-center">
-      <i class="fa-solid fa-envelope" style="margin-right: 1rem"></i>
+      <i class="fa fa-envelope" style="margin-right: 1rem"></i>
       Kostenloses Angebot anfordern
     </button>
 

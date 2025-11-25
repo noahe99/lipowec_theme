@@ -55,17 +55,20 @@ html, body {
   transition: box-shadow 0.56s ease-in-out, transform 0.25s ease-in-out;
 }
 
-.col-lg-3 {
-  flex: 0 0 450px !important;
-  max-width: 400px !important;
+@media (min-width: 1200px) { 
+  .col-lg-3 {
+    flex: 0 0 400px !important; 
+    max-width: 400px !important;
+  }
 }
 
-/* use transform */
-.category:hover{ /* Just for styling */
-  cursor: pointer;
-  box-shadow: 0 15px 22px 2px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2);
-  transform: scale(1.025);
-  z-index: 100;
+@media (hover: hover) and (pointer: fine) {
+    .category:hover { 
+        cursor: pointer;
+        box-shadow: 0 15px 22px 2px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2);
+        transform: scale(1.025); 
+        z-index: 100;
+    }
 }
 
 .card-title {

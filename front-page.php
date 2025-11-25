@@ -14,16 +14,17 @@ get_header();
   <?php $hero_slides = get_field('hero_section') ?>
   
   
-<section id="heroImageSlider" class="carousel slide hero-slider" data-bs-ride="carousel">
+<section id="heroImageSlider" class="carousel slide carousel-fade hero-slider d-none d-md-block" data-bs-ride="carousel">
+
 
   <!-- Indikatoren (die kleinen Punkte am unteren Rand) -->
   <div class="carousel-indicators">
     <?php foreach ($hero_slides as $key => $slide): ?>
       <button type="button" 
               data-bs-target="#heroImageSlider" 
-              data-bs-slide-to="<?php echo $key; ?>" 
-              class="<?php if ($key == 0) echo 'active'; ?>" 
-              aria-current="<?php if ($key == 0) echo 'true'; ?>" 
+              data-bs-slide-to="<?php echo $key; ?>"
+              class="<?php if ($key == 0) echo 'active'; ?>"
+              aria-current="<?php if ($key == 0) echo 'true'; ?>"
               aria-label="Slide <?php echo $key + 1; ?>">
       </button>
     <?php endforeach; ?>
@@ -32,25 +33,25 @@ get_header();
   <!-- Wrapper für die Slides -->
   <div class="carousel-inner">
     <?php foreach ($hero_slides as $key => $slide): 
-      // Holen Sie die Werte aus den Sub-Feldern für den aktuellen Slide.
       $image = $slide['image'];
       $headline = $slide['heading'];
       $subheadline = $slide['subheading'];
       $cta_url = $slide['cta_url'];
     ?>
       <div class="carousel-item <?php if ($key == 0) echo 'active'; ?>" style="background-image: url('<?php echo esc_url($image['url']); ?>');">        
-        <div class="container h-100 d-flex align-items-center text-white">
-          <div>
-            <h2 class="display-5 fw-bold mb-3"><?php echo $headline; ?></h2>
-            <p class="muted mb-5"><?php echo $subheadline; ?></p>
-            <div class="d-flex flex-column flex-md-row gap-3">
+        <div class="hero-overlay"></div>  
+        <div class="container h-100 d-flex align-items-end text-white">
+
+          <div class="hero-card mb-5">
+            <h2><?=  $headline; ?></h2>
+            <p><?= $subheadline ?></p>
+            <div class="ctas">
               <a href="/kontaktieren-sie-uns/" class="btn btn-primary px-4">Jetzt unverbindlich beraten lassen</a>
               <a href="<?php echo $cta_url; ?>" class="btn btn-outline-light px-4">Unsere Produkte entdecken</a>
-
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
     <?php endforeach; ?>
   </div>
@@ -58,29 +59,36 @@ get_header();
   <!-- Vorherige/Nächste Steuerelemente -->
   <button class="carousel-control-prev" type="button" data-bs-target="#heroImageSlider" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
+    <span class="visually-hidden">Nächste</span>
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#heroImageSlider" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
+    <span class="visually-hidden">Zurück</span>
   </button>
 
 </section>
 
-  <div class="container-lg">
+<div class="d-block d-md-none hp-padding"></div>
 
+  <div class="container-lg">
     <div class="row mt-5 mb-0" id="categories">
       <div class="col-md-6">
-        <h1 class="fw-bold home-lead">Entdecken Sie unsere Lösungen für Terrasse, Garten & mehr</h1>
-      </div>
-      <div class="col-md-6">
-        <p>LIPOWEC bietet hochwertigen Sonnen- und Wetterschutz für Ihren Außenbereich – ob Zuhause, 
-          im Gastgarten oder auf der Hotelterrasse. Unsere Lösungen wie Terrassenüberdachungen, Großschirm-Systeme, 
-          Windschutz, Heizstrahler, Möbel und Pavillons vereinen Qualität, Design und Funktionalität</p>
+        <h1 class="fw-bold home-lead d-none d-md-block">
+            Entdecken Sie unsere Lösungen für Terrasse, Garten & mehr
+        </h1>
+
+        <h1 class="fw-bold home-lead d-block d-md-none py-3">
+            Unsere Produktkategorien
+        </h1>
+        </div>
+        <div class="col-md-6 d-none d-md-block">
+          <p>LIPOWEC bietet hochwertigen Sonnen- und Wetterschutz für Ihren Außenbereich – ob Zuhause, 
+            im Gastgarten oder auf der Hotelterrasse. Unsere Lösungen wie Terrassenüberdachungen, Großschirm-Systeme, 
+            Windschutz, Heizstrahler, Möbel und Pavillons vereinen Qualität, Design und Funktionalität</p>
       </div>
     </div>
         
-    <div class="container-lg position-relative">
+    <div class="container-lg px-0 position-relative">
       <div class="scroll-wrapper">
         <div class="row flex-nowrap g-0">
 
@@ -88,7 +96,7 @@ get_header();
           
           ?>
           <?php foreach($categories_new as $cat): ?>
-            <div class="col-12 col-md-6 col-lg-3">
+            <div class="col-8 col-md-6 col-lg-3 p-1">
               <a href="<?= esc_url( $cat['link'] ) ?>">
                 <?php $image = wp_get_attachment_image_src( $cat['image'], 'large' );
                   if ($image && isset($image[0])) {
@@ -96,7 +104,7 @@ get_header();
                   } ?>
                 <div class="category has-bg-img" style="background-image: url( <?= $image_url ?> )">
                   <div class="overlay-cat"></div>
-                  <span class="card-title"><?= $cat['name'] ?><i class="fa-solid fa-chevron-right"></i></span>
+                  <span class="card-title"><?= $cat['name'] ?><i class="fa fa-chevron-right"></i></span>
                 </div>
               </a>
             </div>
@@ -104,11 +112,11 @@ get_header();
           <?php endforeach; ?>
 
         </div>
-      </div><
+      </div>
     </div>
 
     <?php $section1 = get_field('content_section_1'); ?>
-    <div class="row align-items-center about pt-5" data-aos="fade-up">
+    <div class="row align-items-center about pt-5">
       <div class="col-md-6">
         <h3 class="fw-semibold"><?= $section1['h3']; ?></h3>
         <p class="mb-4"><?= $section1['paragraph']; ?></p>
@@ -133,7 +141,7 @@ get_header();
       $features = get_field('features');
   ?>
 
-  <section class="py-5 position-relative" data-aos="fade-up">
+  <section class="py-5 position-relative">
     <div class="container">
       <div class="row text-center mb-5">
         <div class="col">
@@ -167,7 +175,7 @@ get_header();
   </section>
 
     <?php $showroom = get_field('showroom'); ?>
-    <section class="container-fluid py-5" data-aos="fade-up">
+    <section class="container-fluid py-5">
       <div class="row align-items-center">
         <div class="col-md-6 d-none d-md-block">
         <?php render_image($showroom['image'], 'showroom', 'large'); ?>  
@@ -181,11 +189,11 @@ get_header();
       </div>
     </section>
     
-    <div data-aos="fade-up" class="py-5">
+    <div class="py-5">
     <?php echo do_shortcode('[trustindex no-registration=google]'); ?>
     </div>
 
-    <div class="row py-5" data-aos="fade-up">
+    <div class="row py-5">
       <div class="col-sm">
         <h3 class="fw-bold mb-0">Beratung & Service</h3>
         <p class="lead mt-0 sub">Wir helfen Ihnen gerne weiter</p>
@@ -226,7 +234,7 @@ get_header();
         <div class="row mt-4">
           <p><strong>E-Mail <br> </strong>
             Sie können uns auch direkt per E-Mail erreichen. Wir bemühen uns Ihr Anliegen schnelltsmöglich zu bearbeiten.</p>
-          <p class="type"><i class="fa-solid fa-envelope" style="margin-right: 5px;"></i><a href="mailto:info@lipowec.at">info@lipowec.at</a></p>
+          <p class="type"><i class="fa fa-envelope" style="margin-right: 5px;"></i><a href="mailto:info@lipowec.at">info@lipowec.at</a></p>
         </div>
       </div>
       <div class="col-sm">

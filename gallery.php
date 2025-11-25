@@ -33,7 +33,7 @@ foreach ($galleries as $gallery) {
 
             <a
               href="<?= esc_url($image['image']['url']); ?>"
-              class="glightbox d-block"
+              class=l"glightbox d-block"
               data-gallery="gallery-<?= esc_attr($gallery['gallery_content']); ?>">
               <img
                 src="<?= esc_url($image['image']['url']); ?>"

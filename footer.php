@@ -4,7 +4,6 @@
 			?>
 			</main><!-- /#main -->
 
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <a href="https://wa.me/4367763520292" class="float" target="_blank">
 <i class="fa fa-whatsapp my-float"></i>
 </a>
@@ -43,19 +42,19 @@
 							<ul class="social-media">
 									<li>
 											<a rel="noopener noreferrer" href="https://www.instagram.com/lipowec_sonnenschutz/" class="social-links" aria-label="Lipowec auf Instagram">
-													<i class="fa-brands fa-instagram" aria-hidden="true"></i>
+													<i class="fa fa-instagram" aria-hidden="true"></i>
 													<span class="sr-only">Instagram</span>
 											</a>
 									</li>
 									<li>
 											<a rel="noopener noreferrer" href="https://www.facebook.com/lipowecsonnenschutz/?locale=de_DE" class="social-links" aria-label="Lipowec auf Facebook">
-													<i class="fa-brands fa-facebook" aria-hidden="true"></i>
+													<i class="fa fa-facebook" aria-hidden="true"></i>
 													<span class="sr-only">Facebook</span>
 											</a>
 									</li>
 									<li>
 											<a rel="noopener noreferrer" href="https://at.linkedin.com/company/lipowec-gmbh" class="social-links" aria-label="Lipowec auf LinkedIn">
-													<i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+													<i class="fa fa-linkedin" aria-hidden="true"></i>
 													<span class="sr-only">LinkedIn</span>
 											</a>
 									</li>
@@ -67,9 +66,9 @@
 						<div class="col-md-3 footer">
 							<h4>Kontakt</h4>
 							<div class="footer-contact">
-								<p class="type mb-0"><i class="fa-solid fa-envelope" style="margin-right: 5px;"></i>Email </p>
+								<p class="type mb-0"><i class="fa fa-envelope" style="margin-right: 5px;"></i>Email </p>
 								<a href="mailto:info@lipowec.at" class="text-decoration-none">info@lipowec.at</a>
-								<p class="type mb-0"><i class="fa-solid fa-phone" style="margin-right: 5px;"></i>Telefon </p>
+								<p class="type mb-0"><i class="fa fa-phone" style="margin-right: 5px;"></i>Telefon </p>
 								<a href="tel:+43316682659" class="text-decoration-none" style="margin-top: -15px">+43 316 682659</a>
 							</div>
 
@@ -77,10 +76,10 @@
 						</div>
 						<div class="col-md-3 footer">
 							<h4>Öffnungszeiten</h4>
-							<p><i class="fa-solid fa-clock" style="margin-right: 5px;"></i>Öffnungszeiten</p>
+							<p><i class="fa fa-clock" style="margin-right: 5px;"></i>Öffnungszeiten</p>
 							<p style="margin-top: -15px;">Montag bis Donnerstag:<br>
 								8:00 - 12:00 & 13:00 - 16:00</p>
-							<p><i class="fa-solid fa-location-dot" style="margin-right: 5px"></i>Adresse</p>
+							<p><i class="fa fa-location-dot" style="margin-right: 5px"></i>Adresse</p>
 							<p style="margin-top: -15px;">Eggenberger Gürtel 49 <br>
 								A-8020 Graz</p>
 						</div>
@@ -100,10 +99,7 @@
 			?>
 			</body>
 
-			<script src="/assets/aos/aos.js"></script>
-
 			<script>
-				AOS.init();
 
 				document.addEventListener('DOMContentLoaded', function() {
 					const dropdown = document.getElementById('anfrage-art');
