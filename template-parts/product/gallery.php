@@ -44,8 +44,8 @@ if (empty($image_ids)) return;
 
       <!-- Thumbnails (Mobil) -->
       <div class="col-12 d-md-none image-scroll mt-2">
-        <?php foreach ($image_ids as $id): ?>
-          <?= wp_get_attachment_image($id, 'thumbnail', false, ['class' => 'thumb thumb-mobile']); ?>
+        <?php foreach ($image_ids as $id_mobile): ?>
+          <?php render_image($id_mobile, 'thumb thumb-mobile', 'thumbnail'); ?>
         <?php endforeach; ?>
       </div>
     </div>
@@ -70,6 +70,7 @@ if (empty($image_ids)) return;
 $image_urls = array_map(fn($id) => esc_url(wp_get_attachment_image_url($id, 'full')), $image_ids);
 ?>
 <script>
+
 document.addEventListener('DOMContentLoaded', function () {
   const images = <?= json_encode($image_urls); ?>;
   const mainWrapper = document.querySelector('.main-image-wrapper');
@@ -77,6 +78,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const prevBtn = document.querySelector('.arrow-left');
   const nextBtn = document.querySelector('.arrow-right');
   const thumbs = document.querySelectorAll('.thumb');
+
+  console.log(images);
 
   let currentIndex = 0;
   if (!mainWrapper || !images.length) return;
@@ -89,13 +92,26 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function showImage(index) {
+    console.log("Display img with: ", index);
     mainWrapper.innerHTML = `
       <img src="${images[index]}" alt="Produktbild"
            class="img-fluid h-100 w-100 object-fit-cover border rounded"
            id="mainImage">`;
   }
 
-  function updateMain(index) {
+  function isMobile() {
+    return window.matchMedia("(max-width: 767px)").matches;
+  }
+
+  function updateMain(index, initial) {
+
+    if (!initial) {
+      if (isMobile()) {
+        index = index - images.length;
+      }
+    }
+
+
     currentIndex = index;
     if (videoUrl && index === 0) showVideo();
     else showImage(index);
@@ -104,8 +120,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   prevBtn?.addEventListener('click', () => updateMain((currentIndex - 1 + images.length) % images.length));
   nextBtn?.addEventListener('click', () => updateMain((currentIndex + 1) % images.length));
-  thumbs.forEach((t, i) => t.addEventListener('click', () => updateMain(i)));
+  thumbs.forEach((t, i) => t.addEventListener('click', () => updateMain(i, false)));
 
-  updateMain(0);
+  updateMain(0, true);
 });
 </script>

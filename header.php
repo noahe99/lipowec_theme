@@ -6,6 +6,8 @@
 	
 	<?php wp_head(); ?>
 	<link rel="stylesheet"  href="<?php echo get_template_directory_uri(); ?>/assets/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?=  get_template_directory_uri() ?>/assets/glightbox/dist/css/glightbox.css">
+	<script src="<?=  get_template_directory_uri() ?>/assets/glightbox/dist/js/glightbox.min.js"></script>
 </head>
 
 <?php	
