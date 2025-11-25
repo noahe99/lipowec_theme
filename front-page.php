@@ -14,10 +14,30 @@ get_header();
   <?php $hero_slides = get_field('hero_section') ?>
   
   
+
+<section class="d-block d-md-none hp-padding">
+    <div class="container mobile-hero d-flex align-items-center position-relative" style="background-image: url('/wp-content/uploads/2025/07/hero_aiola.webp');">
+        
+        <div class="position-absolute w-100 h-100" style="top: 0; left: 0; background-color: rgba(0, 0, 0, 0.25); z-index: 1;"></div>
+        <div class="" style="z-index: 2;">
+            <h1 class="display-6 fw-bold mb-3 text-white">
+                Hochwertiger Sonnen- & Wetterschutz
+            </h1>
+            <p class="mobile-p">
+              Von der persönlichen Beratung über die Planung bis zur fachgerechten Montage - wir realisieren individuelle Lösungen für private und gewerbliche Außenbereiche.
+            </p>
+            <a href="#produkte" class="btn btn-primary">
+                Produkte entdecken
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
 <section id="heroImageSlider" class="carousel slide carousel-fade hero-slider d-none d-md-block" data-bs-ride="carousel">
 
 
-  <!-- Indikatoren (die kleinen Punkte am unteren Rand) -->
   <div class="carousel-indicators">
     <?php foreach ($hero_slides as $key => $slide): ?>
       <button type="button" 
@@ -43,9 +63,9 @@ get_header();
         <div class="container h-100 d-flex align-items-end text-white">
 
           <div class="hero-card mb-5">
-            <h2><?=  $headline; ?></h2>
+            <h2><?= $headline; ?></h2>
             <p><?= $subheadline ?></p>
-            <div class="ctas">
+            <div class="hero-buttons">
               <a href="/kontaktieren-sie-uns/" class="btn btn-primary px-4">Jetzt unverbindlich beraten lassen</a>
               <a href="<?php echo $cta_url; ?>" class="btn btn-outline-light px-4">Unsere Produkte entdecken</a>
             </div>
@@ -68,7 +88,7 @@ get_header();
 
 </section>
 
-<div class="d-block d-md-none hp-padding"></div>
+<div class="d-block d-md-none"></div>
 
   <div class="container-lg">
     <div class="row mt-5 mb-0" id="categories">
