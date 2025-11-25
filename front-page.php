@@ -82,7 +82,7 @@ get_header();
         </h1>
         </div>
         <div class="col-md-6 d-none d-md-block">
-          <p>LIPOWEC bietet hochwertigen Sonnen- und Wetterschutz für Ihren Außenbereich – ob Zuhause, 
+          <p>LIPOWEC bietet hochwertigen Sonnen- und Wetterschutz für Ihren Außenbereich - ob Zuhause, 
             im Gastgarten oder auf der Hotelterrasse. Unsere Lösungen wie Terrassenüberdachungen, Großschirm-Systeme, 
             Windschutz, Heizstrahler, Möbel und Pavillons vereinen Qualität, Design und Funktionalität</p>
       </div>
@@ -92,9 +92,7 @@ get_header();
       <div class="scroll-wrapper">
         <div class="row flex-nowrap g-0">
 
-          <?php $categories_new = get_field('product_categories'); 
-          
-          ?>
+          <?php $categories_new = get_field('product_categories'); ?>
           <?php foreach($categories_new as $cat): ?>
             <div class="col-8 col-md-6 col-lg-3 p-1">
               <a href="<?= esc_url( $cat['link'] ) ?>">
@@ -144,7 +142,7 @@ get_header();
   <section class="py-5 position-relative">
     <div class="container">
       <div class="row text-center mb-5">
-        <div class="col">
+        <div class="col d-none d-md-block">
           <h3 class="fw-semibold mb-2"><?= $features['heading'] ?></h3>
           <p class="text-muted mb-0"><?= $features['subheading'] ?></p>
         </div>

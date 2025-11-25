@@ -489,19 +489,9 @@ input.form-submit-btn:hover {
 	object-fit: contain;
 }
 
-
-
-
-/* Hide by default */
 .float {
   display: none;
 }
-
-
-
-
-/* -- Mobile queries  */
-
 
 @media (max-width: 1199px) {
   .navbar-home {
@@ -599,82 +589,34 @@ input.form-submit-btn:hover {
 	font-size: 1rem !important; 
 }
 
-/* --- HERO SLIDER --- */
+@media (max-width: 991.98px) { 
+  /* 1. Logo-Größe reduzieren */
+  #header-logo,
+  #header-logo-mobile /* Falls Sie die Lösung mit zwei Logos verwenden */
+  {
 
-.hero-slider .carousel-item {
-  height: 80vh;
-  min-height: 500px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
+      height: 5rem; 
+      width: auto;
+  }
 
+  .navbar {
+      padding-top: 0px !important;
+      padding-bottom: 0px !important;
+  }
+  
+  .navbar .container {
+      padding-left: 15px;
+      padding-right: 15px;
+  }
 
-
-@keyframes fadeUp {
-  0% { opacity: 0; transform: translateY(15px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-.hero-heading {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.hero-subheading {
-  font-size: clamp(1rem, 1.5vw, 1.3rem);
-  opacity: 0.9;
-  margin-bottom: 2rem;
-}
-
-/* Buttons */
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.hero-buttons .btn {
-  padding: 0.8rem 1.8rem;
-  font-size: 1.05rem;
-  border-radius: 6px;
-}
-
-/* Slider Dots minimalistisch */
-.carousel-indicators [data-bs-target] {
-  width: 16px;
-  height: 4px;
-  background-color: #ffffff;
-  opacity: 0.4;
-}
-
-.carousel-indicators .active {
-  opacity: 1;
-}
-
-/* Navigation arrows dezenter */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: drop-shadow(0 0 4px rgba(0,0,0,0.6));
-}
-
-.carousel-fade .carousel-item {
-  transition: opacity 1.8s ease-in-out !important;
-}
-
-.hero-card {
-  background: hsla(209, 29%, 14%, 0.6);
-  padding: 2rem 2.5rem;
-  border-radius: 8px;
-  backdrop-filter: blur(2px);
-  max-width: 520px;
-}
-
-.hero-content {
-  margin-top: auto;
-}
-
-.hp-padding {
-  padding-top: 75px;
+  .navbar-toggler {
+          padding: 0.2rem 0.5rem; 
+          
+          font-size: 1.3rem; 
+      }
+      
+      .navbar-toggler-icon {
+          width: 1.5rem; 
+          height: 1.5rem; 
+      }
 }
