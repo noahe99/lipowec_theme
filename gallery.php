@@ -13,11 +13,7 @@ get_header();
 <?php $galleries = get_field('gallery') ?>
 
 
-<?php
-foreach ($galleries as $gallery) {
-  echo "<script>console.log('" . json_encode($gallery['images'][0]) . "')</script>";
-}
-?>
+
 
 <div class="container py-5">
 

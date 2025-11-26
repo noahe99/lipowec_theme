@@ -30,7 +30,7 @@
           </div>
           <div class="modal-body">
             <?php
-            echo do_shortcode('[contact-form-7 id="e8f1edd" title="Simple Contact"]');
+            echo do_shortcode('[forminator_form id="6168"]');
             ?>
           </div>
         </div>

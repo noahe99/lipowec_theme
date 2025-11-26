@@ -597,3 +597,26 @@ position: relative;
 .mobile-p{
   color: white;
 }
+
+/* Headline nur auf der ersten Slide */
+.carousel-item:first-child .hero-headline-first {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 5;
+    display: flex;
+    align-items: flex-start;
+}
+
+.carousel-item:first-child .hero-headline-first .container {
+    pointer-events: auto; /
+}
+
+.carousel-item:first-child .hero-headline-first h2 {
+    margin-bottom: 1.5rem;
+}
+
+.hero-card-first {
+    margin-bottom: clamp(4rem, 12vh, 12rem);
+}

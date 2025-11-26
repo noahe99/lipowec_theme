@@ -72,14 +72,17 @@
 								<a href="tel:+43316682659" class="text-decoration-none" style="margin-top: -15px">+43 316 682659</a>
 							</div>
 
-							<a href="/kontaktieren-sie-uns/" class="btn btn-secondary mt-3">Kontakformular</a>
+							<a href="/kontaktieren-sie-uns/" class="btn btn-outline-secondary mt-3" style="border-radius: 0.375rem; padding: 0.25rem 0.75rem; font-weight: 500; transition: all 0.2s;">
+									Kontaktformular
+							</a>
+
 						</div>
 						<div class="col-md-3 footer">
 							<h4>Öffnungszeiten</h4>
-							<p><i class="fa fa-clock" style="margin-right: 5px;"></i>Öffnungszeiten</p>
+							<p><i class="fa fa-clock-o" style="margin-right: 5px;"></i>Öffnungszeiten</p>
 							<p style="margin-top: -15px;">Montag bis Donnerstag:<br>
 								8:00 - 12:00 & 13:00 - 16:00</p>
-							<p><i class="fa fa-location-dot" style="margin-right: 5px"></i>Adresse</p>
+							<p><i class="fa fa-map-marker" style="margin-right: 5px"></i>Adresse</p>
 							<p style="margin-top: -15px;">Eggenberger Gürtel 49 <br>
 								A-8020 Graz</p>
 						</div>

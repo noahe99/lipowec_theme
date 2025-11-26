@@ -3,15 +3,24 @@ if (!isset($args)) $args = [];
 $kundentyp = $args['kundentyp'] ?? 'privat';
 
 $gallery_field = $kundentyp === 'gastro' ? 'image_gallery_gastro' : 'image_gallery_privat';
-$image_ids = get_field($gallery_field); // ACF-Gallery gibt IDs zurück (so einstellen!)
-$video_url = get_field('video_url');
 
+// erste Wahl
+$image_ids = get_field($gallery_field);
+
+// Fallback auf die jeweils andere Galerie
 if (empty($image_ids)) {
-  $image_ids = get_field('image_gallery_gastro');
+    $fallback_field = $kundentyp === 'gastro' ? 'image_gallery_privat' : 'image_gallery_gastro';
+    $image_ids = get_field($fallback_field);
 }
 
-if (empty($image_ids)) return;
+// Wenn komplett leer: sauber abbrechen
+if (empty($image_ids)) {
+    return;
+}
+
+$video_url = get_field('video_url');
 ?>
+
 
 <?php if (count($image_ids) > 1): ?>
   <div class="container image-container mt-3">

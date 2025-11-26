@@ -33,8 +33,8 @@ get_header();
           <p class="text-muted mb-0"><?php echo $category['category_paragraph']; ?></p>
         </div>
         <div class="col-md-auto text-md-end mt-3 mt-md-0">
-          <a href="#" class="text-primary text-decoration-none fw-medium">
-            Alle Produkte der Kategorie <i class="bi bi-chevron-right"></i>
+          <a href="<?=  $category['categor_url'] ?>" class="text-primary text-decoration-none fw-medium">
+            Alle Produkte der Kategorie</i>
           </a>
         </div>
       </div>

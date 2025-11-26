@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function setActiveRow(type) {
+        if (!checkbox) {
+            return
+        }
+        
         if (type === "gastro") {
             checkbox.checked = true;
             setCookie("kundentyp", "gastro", 30);

@@ -21,7 +21,7 @@ get_header();
         <div class="position-absolute w-100 h-100" style="top: 0; left: 0; background-color: rgba(0, 0, 0, 0.25); z-index: 1;"></div>
         <div class="" style="z-index: 2;">
             <h1 class="display-6 fw-bold mb-3 text-white">
-                Hochwertiger Sonnen- & Wetterschutz
+                Sonnen- & Wetterschutz
             </h1>
             <p class="mobile-p">
               Von der persönlichen Beratung über die Planung bis zur fachgerechten Montage - wir realisieren individuelle Lösungen für private und gewerbliche Außenbereiche.
@@ -58,23 +58,53 @@ get_header();
       $subheadline = $slide['subheading'];
       $cta_url = $slide['cta_url'];
     ?>
-      <div class="carousel-item <?php if ($key == 0) echo 'active'; ?>" style="background-image: url('<?php echo esc_url($image['url']); ?>');">        
-        <div class="hero-overlay"></div>  
-        <div class="container h-100 d-flex align-items-end text-white">
+      <div class="carousel-item <?php if ($key == 0) echo 'active'; ?>" 
+          style="background-image: url('<?php echo esc_url($image['url']); ?>'); position: relative;">
 
-          <div class="hero-card mb-5">
-            <h2><?= $headline; ?></h2>
+        <div class="hero-overlay"></div>
+
+        <!-- Centered headline only for first slide -->
+        <?php if ($key === 0): ?>
+            <div class="hero-headline-first container">
+                <h2 class="text-white fw-bold display-2 mb-0">
+                    <?= $headline ?>
+                </h2>
+            </div>
+        <?php endif; ?>
+
+
+        <!-- Bottom card (always stays at bottom) -->
+        <div class="container h-100 d-flex align-items-end text-white">
+        <div class="hero-card <?php if ($key != 0) { echo 'mb-5'; } ?> <?php if ($key === 0) { echo 'hero-card-first'; } ?>">
+
+            <?php if ($key !== 0): ?>
+              <h2><?= $headline; ?></h2>
+            <?php endif; ?>
+
             <p><?= $subheadline ?></p>
+
             <div class="hero-buttons">
-              <a href="/kontaktieren-sie-uns/" class="btn btn-primary px-4">Jetzt unverbindlich beraten lassen</a>
-              <a href="<?php echo $cta_url; ?>" class="btn btn-outline-light px-4">Unsere Produkte entdecken</a>
+              <a href="/kontaktieren-sie-uns/" class="btn btn-primary px-4">
+                Jetzt unverbindlich beraten lassen
+              </a>
+              <a href="<?= $cta_url; ?>" class="btn btn-outline-light px-4">
+                <?php if ($key === 0) {
+                  echo "Mehr über Lipowec erfahren";
+                }
+                else {
+                  echo "Produkte entdecken";
+                }
+                ?>
+              </a>
             </div>
           </div>
-
         </div>
+
       </div>
     <?php endforeach; ?>
   </div>
+
+
 
   <!-- Vorherige/Nächste Steuerelemente -->
   <button class="carousel-control-prev" type="button" data-bs-target="#heroImageSlider" data-bs-slide="prev">
@@ -258,7 +288,7 @@ get_header();
       <div class="col-sm">
         <div class="simple_contact">
           <h3>Kontaktieren Sie uns</h3>
-          <?php echo do_shortcode('[contact-form-7 id="e8f1edd" title="Simple Contact"]'); ?>
+          <?php echo do_shortcode('[forminator_form id="6169"]'); ?>
         </div>
       </div>
     </div>

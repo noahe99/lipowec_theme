@@ -620,3 +620,13 @@ input.form-submit-btn:hover {
           height: 1.5rem; 
       }
 }
+
+.btn-outline-secondary:hover {
+    background-color: #f8f9fa;
+    color: #495057;
+    border-color: #495057;
+}
+
+.select-andrede {
+  max-width: 50% !important;
+}

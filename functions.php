@@ -732,26 +732,31 @@ function category_overview_shortcode($atts)
 				$excerpt = wp_trim_words(get_the_excerpt($post->ID), 30, '...');
 
 				echo '<div class="col">';
-				echo '  <div class="card border-0 bg-white h-100 overflow-hidden">';
 				
+				// WRAP THE WHOLE CARD IN THE LINK
+				echo '<a href="' . esc_url($permalink) . '" class="text-decoration-none text-dark d-block h-100">';
+
+				echo '  <div class="card border-0 bg-white h-100 overflow-hidden">';
+
 				if ($thumbnail) {
 						echo '    <div class="position-relative">';
 						echo '      <img src="' . esc_url($thumbnail) . '" class="img-fluid w-100" style="object-fit: cover; height: 240px;" alt="' . esc_attr($title) . '">';
 						echo '      <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);">';
 						echo '        <h5 class="text-white fw-bold mb-0">' . esc_html($title) . '</h5>';
 						echo '      </div>';
+						echo '      <span class="stretched-link"></span>'; // makes the whole card clickable
 						echo '    </div>';
 				}
 
 				echo '    <div class="card-body px-3 py-4 d-flex flex-column justify-content-between">';
 				echo '      <p class="text-muted mb-3" style="min-height: 60px;">' . esc_html($excerpt) . '</p>';
-				echo '      <a href="' . esc_url($permalink) . '" class="fw-semibold text-dark text-decoration-none">';
-				echo '        Mehr erfahren <i class="bi bi-arrow-right-short"></i>';
-				echo '      </a>';
+				echo '    	<p class="text-muted">Mehr erfahren</p>';
 				echo '    </div>';
 				echo '  </div>';
+				echo '</a>';
 				echo '</div>';
 		}
+
 		wp_reset_postdata();
 
 
@@ -766,7 +771,7 @@ add_shortcode('category_overview', 'category_overview_shortcode');
 
 
 
-define('BASE_URL', 'https://lipowec.www12.perfectnet.at');
+define('BASE_URL', 'https://lipowec.at');
 
 
 if (!isset($_COOKIE['kundentyp'])) {
@@ -881,8 +886,6 @@ function render_image($id, $class, $size) {
 			false,
 			['class' => 'img-fluid ' . $class] );
 }
-
-
 
 
 /**
