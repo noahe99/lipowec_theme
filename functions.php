@@ -645,7 +645,7 @@ function register_custom_post_type_produkte() {
 			'rewrite'            => array('slug' => 'produkt'),
 			'menu_icon'          => 'dashicons-cart',
 			'supports'           => array('title', 'editor', 'thumbnail', 'excerpt'),
-			'show_in_rest'       => true,
+			'show_in_rest'       => false,
 			'taxonomies' 				 => ['produkt_kategorie']
 	);
 
@@ -724,40 +724,60 @@ function category_overview_shortcode($atts)
     echo '<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">';
 
 
-		foreach ($posts as $post) {
-				setup_postdata($post);
-				$thumbnail = get_the_post_thumbnail_url($post->ID, 'large');
-				$title = get_the_title($post->ID);
-				$permalink = get_permalink($post->ID);
-				$excerpt = wp_trim_words(get_the_excerpt($post->ID), 30, '...');
+	foreach ($posts as $post) {
+			setup_postdata($post);
 
-				echo '<div class="col">';
-				
-				// WRAP THE WHOLE CARD IN THE LINK
-				echo '<a href="' . esc_url($permalink) . '" class="text-decoration-none text-dark d-block h-100">';
+			$thumbnail = get_the_post_thumbnail_url($post->ID, 'large');
+			$title = get_the_title($post->ID);
+			$permalink = get_permalink($post->ID);
 
-				echo '  <div class="card border-0 bg-white h-100 overflow-hidden">';
 
-				if ($thumbnail) {
-						echo '    <div class="position-relative">';
-						echo '      <img src="' . esc_url($thumbnail) . '" class="img-fluid w-100" style="object-fit: cover; height: 240px;" alt="' . esc_attr($title) . '">';
-						echo '      <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);">';
-						echo '        <h5 class="text-white fw-bold mb-0">' . esc_html($title) . '</h5>';
-						echo '      </div>';
-						echo '      <span class="stretched-link"></span>'; // makes the whole card clickable
-						echo '    </div>';
-				}
+			$excerpt = get_the_excerpt( $post->ID );
 
-				echo '    <div class="card-body px-3 py-4 d-flex flex-column justify-content-between">';
-				echo '      <p class="text-muted mb-3" style="min-height: 60px;">' . esc_html($excerpt) . '</p>';
-				echo '    	<p class="text-muted">Mehr erfahren</p>';
-				echo '    </div>';
-				echo '  </div>';
-				echo '</a>';
-				echo '</div>';
-		}
+			if (!$excerpt) {
+				$content = get_field('content_privat', $post->ID);
 
-		wp_reset_postdata();
+				// Entfernt <strong ...>...</strong> inklusive Inhalt (auch mit Attributen, multiline)
+				$content = preg_replace('#<strong\b[^>]*>[\s\S]*?</strong>#i', '', $content);
+
+
+				$excerpt = wp_html_excerpt($content, 350, '...');
+
+				// Optional: restliches HTML entfernen und auf Wortanzahl kürzen
+				$excerpt = wp_strip_all_tags($excerpt);
+			}
+
+			$excerpt = wp_trim_words( $excerpt, 30 );
+
+
+
+			echo '<div class="col">';
+			echo '<a href="' . esc_url($permalink) . '" class="text-decoration-none text-dark d-block h-100">';
+			echo '  <div class="card border-0 bg-white h-100 overflow-hidden">';
+
+			if ($thumbnail) {
+					echo '    <div class="position-relative">';
+					echo '      <img src="' . esc_url($thumbnail) . '" class="img-fluid w-100" style="object-fit: cover; height: 240px;" alt="' . esc_attr($title) . '">';
+					echo '      <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);">';
+					echo '        <h5 class="text-white fw-bold mb-0">' . esc_html($title) . '</h5>';
+					echo '      </div>';
+					echo '      <span class="stretched-link"></span>';
+					echo '    </div>';
+			}
+
+			echo '    <div class="card-body px-3 py-4 d-flex flex-column justify-content-between">';
+			echo '      <div class="text-muted mb-3" style="min-height: 60px;">' . $excerpt . '</div>';
+			echo '      <p class="text-muted">Mehr erfahren</p>';
+			echo '    </div>';
+
+			echo '  </div>';
+			echo '</a>';
+			echo '</div>';
+	}
+
+	wp_reset_postdata();
+
+
 
 
 

@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!checkbox) {
             return
         }
+
+        console.log("setting row!");
         
         if (type === "gastro") {
             checkbox.checked = true;
