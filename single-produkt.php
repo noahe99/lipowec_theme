@@ -51,29 +51,26 @@ get_header();
 
         <div class="row <?= !get_field('has_gastro_info') ? 'mt-3' : '' ?>">
             <div class="col-12 col-md-9">
-                <p class="product-desc-heading mb-2">Beschreibung</p>
 
-
-                <?php
-                if (empty(get_field('content_gastro'))) {
-                    the_content();
+            <div class="pt-4"></div>
+            <?php
+            // Fallback-Logik für Inhalte
+            if ($kundentyp === 'gastro' && get_field('has_gastro_info')) {
+                $content = get_field('content_gastro');
+                // Wenn gastro-content leer ist, fallback auf privat
+                if (empty($content)) {
+                    $content = get_field('content_privat');
                 }
-                ?>
+            } else {
+                // Immer privat, wenn kein Gastro oder has_gastro_info = 0
+                $content = get_field('content_privat');
+            }
 
-                <?php
-                $content_field = $kundentyp === 'gastro' ? 'content_gastro' : 'content_privat';
-
-                if ($kundentyp === 'gastro') {
-                    echo '<div data-nosnippet>';
-                    the_field($content_field);
-                    echo '</div>';
-                } else {
-                    echo '<div>';
-                    the_field("content_privat");
-                    echo '</div>';
-                }
-
-                ?>
+            // Ausgabe
+            echo '<div' . ($kundentyp === 'gastro' ? ' data-nosnippet' : '') . '>';
+            echo $content;
+            echo '</div>';
+            ?>
 
 
             </div> <!-- col-12 -->
