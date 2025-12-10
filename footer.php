@@ -81,7 +81,7 @@
 							<h4>Öffnungszeiten</h4>
 							<p><i class="fa fa-clock-o" style="margin-right: 5px;"></i>Öffnungszeiten</p>
 							<p style="margin-top: -15px;">Montag bis Donnerstag:<br>
-								8:00 - 12:00 & 13:00 - 16:00</p>
+								8:00 - 12:00 Uhr</p>
 							<p><i class="fa fa-map-marker" style="margin-right: 5px"></i>Adresse</p>
 							<p style="margin-top: -15px;">Eggenberger Gürtel 49 <br>
 								A-8020 Graz</p>

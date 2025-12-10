@@ -22,11 +22,13 @@
       </div>
 
       <div class="card-body px-3 py-4 d-flex flex-column justify-content-between">
-        <p class="text-muted mb-3" style="min-height: 60px;">
-          <?php echo $product['info']; ?>
-        </p>
+        <div class="text-muted mb-3" style="min-height: 60px;"> <?= $product['info']; ?> </div>
+        <p class="text-muted">Mehr erfahren</p>
       </div>
 
     </div>
   </a>
 </div>
+
+
+

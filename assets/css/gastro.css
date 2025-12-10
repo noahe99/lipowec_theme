@@ -9,3 +9,54 @@
   margin-bottom: 0px;
 }
 
+.gastro-slider .carousel-item {
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.gastro-caption {
+  backdrop-filter: blur(2px);
+  background: rgba(0,0,0,0.4);
+  padding: 1.2rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.herotextbox {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+
+.subherotextbox {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+}
+
+.number-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.number-box::before {
+  content: attr(data-number);
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 6rem;
+  font-weight: 800;
+  color: rgba(1, 38, 101, 0.6);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.card-padding {
+  padding: 1.5rem;
+  padding-right: 7.5rem;
+}

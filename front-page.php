@@ -2,7 +2,7 @@
 function enqueue_home_assets()
 {
   wp_enqueue_style('home-style', get_stylesheet_directory_uri() . '/assets/css/home.css');
-  wp_enqueue_script('home-script', get_stylesheet_directory_uri() . '/assets/js/home.js', array('jquery'), null, true);
+  //wp_enqueue_script('home-script', get_stylesheet_directory_uri() . '/assets/js/home.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_home_assets');
 
@@ -89,7 +89,7 @@ get_header();
               </a>
               <a href="<?= $cta_url; ?>" class="btn btn-outline-light px-4">
                 <?php if ($key === 0) {
-                  echo "Mehr über Lipowec erfahren";
+                  echo "Mehr über LIPOWEC erfahren";
                 }
                 else {
                   echo "Produkte entdecken";
