@@ -61,32 +61,21 @@ get_header();
   </div>
 </div>
 
-
+<?php $products = get_field('products_all_json') ?>
 <!--  PRODUCTS 1 --> 
 <div class="container py-5">
-  <?php 
-  if( have_rows('products_1') ): ?>
-      <div class="row g-4 pb-3">
-          <?php 
-          while( have_rows('products_1') ): the_row(); 
-
-              $product_group = get_sub_field('product');
-
-              $product = array(
-                  'title' => $product_group['title'],
-                  'info'  => $product_group['info'],
-                  'image' => wp_get_attachment_image_url($product_group['img'], 'full'),
-                  'link'  => $product_group['url']
-              );
-
-              $template = locate_template( 'template-parts/product-card.php' );
-              if ($template) {
-                  require $template;
-              }
-          endwhile; 
-          ?>
-      </div>
-  <?php endif; ?>
+  <?php $products_1 = json_decode( $products[0]['products'], true ); ?>
+  <div class="row g-4 pb-3">
+  <?php
+    foreach($products_1 as $product)
+    {
+      $template = locate_template( 'template-parts/product-card.php' );
+      if ($template) {
+        require $template;
+      }
+    }
+  ?>
+  </div>
 </div>
 
 <div class="container">
@@ -124,37 +113,44 @@ get_header();
 <!-- PRODUCTS 2 -->
 
 <div class="container py-5">
-  <?php 
-  if( have_rows('products_2') ): ?>
-      <div class="row g-4 pb-3">
-          <?php 
-          while( have_rows('products_2') ): the_row(); 
-
-              $product_group = get_sub_field('product');
-
-              $product = array(
-                  'title' => $product_group['title'],
-                  'info'  => $product_group['info'],
-                  'image' => wp_get_attachment_image_url($product_group['img'], 'full'),
-                  'link'  => $product_group['url']
-              );
-
-              $template = locate_template( 'template-parts/product-card.php' );
-              if ($template) {
-                  require $template;
-              }
-          endwhile; 
-          ?>
-      </div>
-  <?php endif; ?>
-</div>    
+  <?php $products_1 = json_decode( $products[1]['products'], true ); ?>
+  <div class="row g-4 pb-3">
+  <?php
+    foreach($products_1 as $product)
+    {
+      $template = locate_template( 'template-parts/product-card.php' );
+      if ($template) {
+        require $template;
+      }
+    }
+  ?>
+  </div>
+</div>  
   
 <div class="container">
   <div class="row gastro">
     <h3 class="fw-semibold"><?=  $productContent[3]['headline']; ?></h3>
     <?= $productContent[3]['content'];  ?>
   </div>
+</div>
 
+<div class="container py-5">
+  <div class="row text-center">
+    <?php
+      $icons = json_decode(get_field('icon_json2'), true);
+
+      foreach($icons as $icon)
+      {
+        echo '<div class="col-3 d-flex flex-column align-items-center">';
+        echo '<img src="'. $icon['icon'] .'" class="mb-2" alt="icon">';
+        echo '<p><strong>'. $icon['text'] .'</strong></p>';
+        echo '</div>';
+      }
+    ?>
+  </div>
+</div>
+
+<div class="container">
   <div class="row gastro mt-3">
     <h3 class="fw-semibold"><?=  $productContent[4]['headline']; ?></h3>
     <?= $productContent[4]['content'];  ?>
@@ -164,30 +160,19 @@ get_header();
 <!-- PRODUCCTS 3 -->
 
 <div class="container py-5">
-  <?php 
-  if( have_rows('products_3') ): ?>
-      <div class="row g-4 pb-3">
-          <?php 
-          while( have_rows('products_3') ): the_row(); 
-
-              $product_group = get_sub_field('product');
-
-              $product = array(
-                  'title' => $product_group['title'],
-                  'info'  => $product_group['info'],
-                  'image' => wp_get_attachment_image_url($product_group['img'], 'full'),
-                  'link'  => $product_group['url']
-              );
-
-              $template = locate_template( 'template-parts/product-card.php' );
-              if ($template) {
-                  require $template;
-              }
-          endwhile; 
-          ?>
-      </div>
-  <?php endif; ?>
-</div>    
+  <?php $products_1 = json_decode( $products[2]['products'], true ); ?>
+  <div class="row g-4 pb-3">
+  <?php
+    foreach($products_1 as $product)
+    {
+      $template = locate_template( 'template-parts/product-card.php' );
+      if ($template) {
+        require $template;
+      }
+    }
+  ?>
+  </div>
+</div> 
 
 <section class="py-5">
   <div class="container">
