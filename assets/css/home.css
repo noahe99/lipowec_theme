@@ -617,4 +617,7 @@ position: relative;
 
 .hero-card-first {
     margin-bottom: clamp(15rem, 10vh, 14rem);
+    display: none;
 }
+
+

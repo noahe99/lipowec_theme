@@ -88,8 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const nextBtn = document.querySelector('.arrow-right');
   const thumbs = document.querySelectorAll('.thumb');
 
-  console.log(images);
-
   let currentIndex = 0;
   if (!mainWrapper || !images.length) return;
 
