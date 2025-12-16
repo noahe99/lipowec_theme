@@ -37,11 +37,6 @@ get_header();
                 class="gallery-img img-fluid">
             </a>
 
-            <?php if (!empty($image['text'])): ?>
-              <p class="gallery-caption small mt-2 mb-0">
-                <?= esc_html($image['text']); ?>
-              </p>
-            <?php endif; ?>
 
           </div>
         <?php endforeach; ?>

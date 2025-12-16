@@ -4,14 +4,14 @@
 			?>
 			</main><!-- /#main -->
 
-<a href="https://wa.me/4367763520292" class="float" target="_blank">
-<i class="fa fa-whatsapp my-float"></i>
-</a>
+			<a href="#" class="float" id="whatsapp-btn" target="_blank">
+				<i class="fa fa-whatsapp my-float"></i>
+			</a>
 
 			<footer id="footer">
-							<div class="footer-image-column d-none d-md-block">
-				<img src="/wp-content/uploads/2025/07/LIPOWEC_seit_1918.jpg" alt="Dekoratives Bild" class="footer-image">
-			</div>
+				<div class="footer-image-column d-none d-md-block">
+					<img src="/wp-content/uploads/2025/07/LIPOWEC_seit_1918.jpg" alt="Dekoratives Bild" class="footer-image">
+				</div>
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6">
@@ -40,27 +40,25 @@
 							?>
 
 							<ul class="social-media">
-									<li>
-											<a rel="noopener noreferrer" href="https://www.instagram.com/lipowec_sonnenschutz/" class="social-links" aria-label="Lipowec auf Instagram">
-													<i class="fa fa-instagram" aria-hidden="true"></i>
-													<span class="sr-only">Instagram</span>
-											</a>
-									</li>
-									<li>
-											<a rel="noopener noreferrer" href="https://www.facebook.com/lipowecsonnenschutz/?locale=de_DE" class="social-links" aria-label="Lipowec auf Facebook">
-													<i class="fa fa-facebook" aria-hidden="true"></i>
-													<span class="sr-only">Facebook</span>
-											</a>
-									</li>
-									<li>
-											<a rel="noopener noreferrer" href="https://at.linkedin.com/company/lipowec-gmbh" class="social-links" aria-label="Lipowec auf LinkedIn">
-													<i class="fa fa-linkedin" aria-hidden="true"></i>
-													<span class="sr-only">LinkedIn</span>
-											</a>
-									</li>
+								<li>
+									<a rel="noopener noreferrer" href="https://www.instagram.com/lipowec_sonnenschutz/" class="social-links" aria-label="Lipowec auf Instagram">
+										<i class="fa fa-instagram" aria-hidden="true"></i>
+										<span class="sr-only">Instagram</span>
+									</a>
+								</li>
+								<li>
+									<a rel="noopener noreferrer" href="https://www.facebook.com/lipowecsonnenschutz/?locale=de_DE" class="social-links" aria-label="Lipowec auf Facebook">
+										<i class="fa fa-facebook" aria-hidden="true"></i>
+										<span class="sr-only">Facebook</span>
+									</a>
+								</li>
+								<li>
+									<a rel="noopener noreferrer" href="https://at.linkedin.com/company/lipowec-gmbh" class="social-links" aria-label="Lipowec auf LinkedIn">
+										<i class="fa fa-linkedin" aria-hidden="true"></i>
+										<span class="sr-only">LinkedIn</span>
+									</a>
+								</li>
 							</ul>
-
-
 
 						</div>
 						<div class="col-md-3 footer">
@@ -73,7 +71,7 @@
 							</div>
 
 							<a href="/kontaktieren-sie-uns/" class="btn btn-outline-secondary mt-3" style="border-radius: 0.375rem; padding: 0.25rem 0.75rem; font-weight: 500; transition: all 0.2s;">
-									Kontaktformular
+								Kontaktformular
 							</a>
 
 						</div>
@@ -103,7 +101,6 @@
 			</body>
 
 			<script>
-
 				document.addEventListener('DOMContentLoaded', function() {
 					const dropdown = document.getElementById('anfrage-art');
 					const adressFields = document.getElementById('adress-cf7');
@@ -125,9 +122,16 @@
 				});
 
 				document.addEventListener('DOMContentLoaded', function() {
-					const lightbox = GLightbox({ selector: '.glightbox' });
+					const lightbox = GLightbox({
+						selector: '.glightbox'
+					});
 				});
 
+
+				const part1 = "43677";
+				const part2 = "63520292";
+				document.getElementById("whatsapp-btn").href =
+					"https://wa.me/" + part1 + part2;
 			</script>
 
 			</html>
